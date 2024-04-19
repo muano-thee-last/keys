@@ -50,7 +50,7 @@
                 motivation: 'Passionate about learning'
             };
 
-            fetch('/applicants', {
+            fetch('http://localhost:3000/applicants', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -76,7 +76,7 @@
                 motivation: 'Excited to contribute'
             };
 
-            fetch(`/applicants/${id}`, {
+            fetch(`http://localhost:3000/applicants/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
