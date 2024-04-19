@@ -19,7 +19,7 @@
     <script>
         // Function to make GET request to retrieve all applicants
         function getAllApplicants() {
-            fetch('/applicants')
+            fetch('http://localhost:3000/applicants')
             .then(response => response.json())
             .then(data => {
                 console.log('All Applicants:', data);
@@ -30,7 +30,7 @@
 
         // Function to make GET request to retrieve a single applicant by ID
         function getApplicantById(id) {
-            fetch(`/applicants/${id}`)
+            fetch(`http://localhost:3000/applicants/${id}`)
             .then(response => response.json())
             .then(data => {
                 console.log(`Applicant with ID ${id}:`, data);
@@ -93,7 +93,7 @@
 
         // Function to make DELETE request to delete an applicant by ID
         function deleteApplicant(id) {
-            fetch(`/applicants/${id}`, {
+            fetch(`http://localhost:3000/applicants/${id}`, {
                 method: 'DELETE',
             })
             .then(response => {

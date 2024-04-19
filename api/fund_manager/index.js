@@ -1,21 +1,15 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import fs from 'fs';
+const express= require('express');
+const cors = require('cors')
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+app.use(cors());
 // Middleware to parse JSON bodies
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Load applicants data from JSON file
-let applicants = [];
-try {
-    const data = fs.readFileSync('applicants.json');
-    applicants = JSON.parse(data);
-} catch (err) {
-    console.error('Error reading applicants data:', err);
-}
+const applicants = require('./applicants.json');
 
 // GET all applicants
 app.get('/applicants', (req, res) => {
